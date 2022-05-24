@@ -12,6 +12,11 @@
     <body>
         <header class="header">
             <div class="header__line">
+                <div class="mob-menu">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                </div>
                 <a href="/" class="header__logo-link"><span class="header__logo-line__weight">Московский</span> Экспортный центр</a>
                 <picture class="header__picture-emblem">
                     <source srcset="./images/emblem.webp" type="image/webp">
@@ -27,29 +32,38 @@
                         <li class="header__item"><a href="#" class="header__link">Выход в ритейл-сети</a></li>
                         <li class="header__item"><a href="#" class="header__link">Акселерационные программы</a></li>
                         <li class="header__item header__inner">
-                            <a href="#" class="header__link">Дополнительные возможности<svg fill="none" viewBox="0 0 12 7" class="header__arrow" id="arrow_menu" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></a>
+                            <a href="#" class="header__link">Дополнительные возможности<svg fill="none" viewBox="0 0 12 7" class="header__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></a>
                             <div class="header__inner-list" style="height:0px;">
-                                <ul>
-                                    <li class="header__item"><a href="#" class="header__link">Размещение в Duty Free</a></li>
-                                    <li class="header__item header__inner__two">
-                                        <a href="#" class="header__link">Субсидии и гранты<span class="header__plus"><svg fill="none" viewBox="0 0 12 7" class="header__arrow" id="arrow_menu" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></a></span></a>
-                                        <ul class="header__inner-list">
-                                            <li class="header__item"><a href="#" class="header__link">Грант на экспорт</a></li>
-                                            <li class="header__item"><a href="#" class="header__link">Получение патентов и сертификатов</a></li>
-                                            <li class="header__item"><a href="#" class="header__link">Сертификация продукции</a></li>
-                                            <li class="header__item"><a href="#" class="header__link">Транспортировка товаров за рубеж</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="header__item"><a href="#" class="header__link">Персональные консультации</a></li>
-                                    <li class="header__item"><a href="#" class="header__link">Аналитика ВЭД</a></li>
-                                    <li class="header__item"><a href="#" class="header__link">Экспортный каталог</a></li>
-                                    <li class="header__item"><a href="#" class="header__link">Подбор теплых байеров</a></li>
-                                    <li class="header__item"><a href="#" class="header__link">Конкурс «Экспортер года»</a></li>
-                                </ul>
-                                <img src="./images/banner_menu.png" alt="" class="header__banner-menu">
+                                <div class="header__inner-wrapp">
+                                    <span class="header__prev-button" id="header__prev-button"><svg fill="none" viewBox="0 0 12 7" class="header__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg>Дополнительные возможности</span>
+                                    <ul>
+                                        <li class="header__item"><a href="#" class="header__link">Размещение в Duty Free</a></li>
+                                        <li class="header__item header__inner__two">
+                                            <a href="#" class="header__link">Субсидии и гранты<span class="header__plus"><svg fill="none" viewBox="0 0 12 7" class="header__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></span></a>
+                                            <ul class="header__inner-list">
+                                                <li class="header__item"><a href="#" class="header__link">Грант на экспорт</a></li>
+                                                <li class="header__item"><a href="#" class="header__link">Получение патентов и сертификатов</a></li>
+                                                <li class="header__item"><a href="#" class="header__link">Сертификация продукции</a></li>
+                                                <li class="header__item"><a href="#" class="header__link">Транспортировка товаров за рубеж</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="header__item"><a href="#" class="header__link">Персональные консультации</a></li>
+                                        <li class="header__item"><a href="#" class="header__link">Аналитика ВЭД</a></li>
+                                        <li class="header__item"><a href="#" class="header__link">Экспортный каталог</a></li>
+                                        <li class="header__item"><a href="#" class="header__link">Подбор теплых байеров</a></li>
+                                        <li class="header__item"><a href="#" class="header__link">Конкурс «Экспортер года»</a></li>
+                                    </ul>
+                                    <img src="./images/banner_menu.png" alt="" class="header__banner-menu">
+                                </div>
                             </div>
                         </li>
                     </ul>
+                    <div class="header__mob-contacts">
+                        <a href="tel:84992888501" class="header__mob-phone">+7 (499) 288-85-01</a>
+                        <p class="header__mob-mail">info@moscow-export.com</p>
+                        <p class="header__mob-address">109028, Россия, Москва, Хохловский переулок, 10с1</p>
+                        <a href="#" class="header__mob-soc"><svg fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#aclip0_8_296)"><path d="M37.192 2.808C34.375 0 29.85 0 20.833 0h-1.666C10.15 0 5.625 0 2.808 2.808-.008 5.617 0 10.15 0 19.167v1.666c0 9.017 0 13.542 2.808 16.359C5.617 40.008 10.15 40 19.167 40h1.666c9.05 0 13.575 0 16.392-2.808C40.042 34.383 40 29.85 40 20.833v-1.666c0-9.017 0-13.542-2.808-16.359zM28.7 28.817a8.224 8.224 0 00-6.9-5.95v5.95h-.517c-9.116 0-14.316-6.25-14.533-16.667h4.567c.15 7.633 3.516 10.833 6.183 11.533V12.167h4.3v6.583c2.633-.283 5.4-3.283 6.333-6.583h4.3A12.7 12.7 0 0126.6 20.5a13.158 13.158 0 016.85 8.333l-4.75-.016z" fill="#C4C4C4"/></g><defs><clipPath><path fill="#fff" d="M0 0h40v40H0z"/></clipPath></defs></svg></a>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -93,8 +107,8 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="slider__main-next slider__main-button"><svg fill="none" viewBox="0 0 56 56" id="arrow__slider" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.126 27.492L29.6 19.724l.68-.724L39 28l-8.722 9-.679-.724 7.527-7.768H17v-1.016h20.126z" fill="#C00D0D"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28 55c14.912 0 27-12.088 27-27S42.912 1 28 1 1 13.088 1 28s12.088 27 27 27zm0 1c15.464 0 28-12.536 28-28S43.464 0 28 0 0 12.536 0 28s12.536 28 28 28z" fill="#C00D0D"/></svg></div>
-                        <div class="slider__main-prev slider__main-button"><svg fill="none" viewBox="0 0 56 56" id="arrow__slider" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.126 27.492L29.6 19.724l.68-.724L39 28l-8.722 9-.679-.724 7.527-7.768H17v-1.016h20.126z" fill="#C00D0D"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28 55c14.912 0 27-12.088 27-27S42.912 1 28 1 1 13.088 1 28s12.088 27 27 27zm0 1c15.464 0 28-12.536 28-28S43.464 0 28 0 0 12.536 0 28s12.536 28 28 28z" fill="#C00D0D"/></svg></div>
+                        <div class="slider__main-next slider__main-button"><svg fill="none" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.126 27.492L29.6 19.724l.68-.724L39 28l-8.722 9-.679-.724 7.527-7.768H17v-1.016h20.126z" fill="#C00D0D"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28 55c14.912 0 27-12.088 27-27S42.912 1 28 1 1 13.088 1 28s12.088 27 27 27zm0 1c15.464 0 28-12.536 28-28S43.464 0 28 0 0 12.536 0 28s12.536 28 28 28z" fill="#C00D0D"/></svg></div>
+                        <div class="slider__main-prev slider__main-button"><svg fill="none" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M37.126 27.492L29.6 19.724l.68-.724L39 28l-8.722 9-.679-.724 7.527-7.768H17v-1.016h20.126z" fill="#C00D0D"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28 55c14.912 0 27-12.088 27-27S42.912 1 28 1 1 13.088 1 28s12.088 27 27 27zm0 1c15.464 0 28-12.536 28-28S43.464 0 28 0 0 12.536 0 28s12.536 28 28 28z" fill="#C00D0D"/></svg></div>
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
@@ -128,11 +142,19 @@
                     <div class="exhibition__select select">
                         <div class="exhibition__header select__header">
                             <span class="exhibition__enter select__enter">Пищевая промышленность</span>
-                            <div class="exhibition__icon select__icon"><svg fill="none" viewBox="0 0 12 7" class="select__arrow" id="arrow_menu" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></div>
+                            <div class="exhibition__icon select__icon"><svg fill="none" viewBox="0 0 12 7" class="select__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></div>
                         </div>
                         <div class="exhibition__body select__body">
                             <div class="exhibition__item select__item" data-set="0">Пищевая промышленность</div>
-                            <div class="exhibition__item select__item" data-set="1">Пищевая промышленность 2</div>
+                            <div class="exhibition__item select__item" data-set="1">Медицина и мед. услуги</div>
+                            <div class="exhibition__item select__item" data-set="0">IT-услуги</div>
+                            <div class="exhibition__item select__item" data-set="1">Компьютеры, электронное и электрическое оборудование</div>
+                            <div class="exhibition__item select__item" data-set="0">Строительная отрасль</div>
+                            <div class="exhibition__item select__item" data-set="1">Косметическая отрасль</div>
+                            <div class="exhibition__item select__item" data-set="0">Кинопроизводство и анимация</div>
+                            <div class="exhibition__item select__item" data-set="1">Ювелирная отрасль</div>
+                            <div class="exhibition__item select__item" data-set="0">Производство одежды</div>
+                            <div class="exhibition__item select__item" data-set="1">Произведения искусства </div>
                         </div>
                     </div>
                     <div class="exhibition__content">
@@ -152,7 +174,7 @@
                             <div class="request__select select">
                                 <div class="request__header select__header">
                                     <span class="request__enter select__enter">Пищевая промышленность</span>
-                                    <div class="request__icon select__icon"><svg fill="none" viewBox="0 0 12 7" class="select__arrow" id="arrow_menu" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></div>
+                                    <div class="request__icon select__icon"><svg fill="none" viewBox="0 0 12 7" class="select__arrow" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.824 5.25L10.647 1" stroke="#C00D0D"/></svg></div>
                                 </div>
                                 <div class="request__body select__body">
                                     <label class="request__item select__item">Интересующая выставка<input type="radio" name="request__radio" value="one" checked></label>
@@ -259,32 +281,32 @@
                 <div class="footer__description">
                     <div class="footer__content">
                         <h3 class="footer__content-title">Медиа</h3>
-                        <ul class="footer__content-link">
-                            <li><a href="">Новости</a></li>
-                            <li><a href="">База</a></li>
-                            <li><a href="">Практика</a></li>
-                            <li><a href="">Легенды</a></li>
-                            <li><a href="">Игры</a></li>
+                        <ul class="footer__content-links">
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Новости</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">База</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Практика</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Легенды</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Игры</a></li>
                         </ul>
                     </div>
                     <div class="footer__content">
                         <h3 class="footer__content-title">Инструкции</h3>
-                        <ul class="footer__content-link">
-                            <li><a href="">Департамент предпринимательства</a></li>
-                            <li><a href="">Другие ведомства Москвы</a></li>
-                            <li><a href="">Роспотребнадзор</a></li>
+                        <ul class="footer__content-links">
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Департамент предпринимательства</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Другие ведомства Москвы</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Роспотребнадзор</a></li>
                         </ul>
                         <h3 class="footer__content-title">Бизнесмаркет</h3>
-                        <ul class="footer__content-link">
-                            <li><a href="">Финансовая поддержка</a></li>
-                            <li><a href="">Бесплатное образование</a></li>
-                            <li><a href="">Масштабирование бизнеса</a></li>
-                            <li><a href="">Поиск и аренда помещений</a></li>
-                            <li><a href="">Открытие своего бизнеса</a></li>
-                            <li><a href="">Другие сервисы</a></li>
+                        <ul class="footer__content-links">
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Финансовая поддержка</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Бесплатное образование</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Масштабирование бизнеса</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Поиск и аренда помещений</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Открытие своего бизнеса</a></li>
+                            <li class="footer__content-item"><a href="" class="footer__content-link">Другие сервисы</a></li>
                         </ul>
                     </div>
-                    <a href="#" class="footer__soc"><svg fill="none" viewBox="0 0 40 40" id="VK" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#aclip0_8_296)"><path d="M37.192 2.808C34.375 0 29.85 0 20.833 0h-1.666C10.15 0 5.625 0 2.808 2.808-.008 5.617 0 10.15 0 19.167v1.666c0 9.017 0 13.542 2.808 16.359C5.617 40.008 10.15 40 19.167 40h1.666c9.05 0 13.575 0 16.392-2.808C40.042 34.383 40 29.85 40 20.833v-1.666c0-9.017 0-13.542-2.808-16.359zM28.7 28.817a8.224 8.224 0 00-6.9-5.95v5.95h-.517c-9.116 0-14.316-6.25-14.533-16.667h4.567c.15 7.633 3.516 10.833 6.183 11.533V12.167h4.3v6.583c2.633-.283 5.4-3.283 6.333-6.583h4.3A12.7 12.7 0 0126.6 20.5a13.158 13.158 0 016.85 8.333l-4.75-.016z" fill="#C4C4C4"/></g><defs><clipPath id="aclip0_8_296"><path fill="#fff" d="M0 0h40v40H0z"/></clipPath></defs></svg></a>
+                    <a href="#" class="footer__soc"><svg fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#aclip0_8_296)"><path d="M37.192 2.808C34.375 0 29.85 0 20.833 0h-1.666C10.15 0 5.625 0 2.808 2.808-.008 5.617 0 10.15 0 19.167v1.666c0 9.017 0 13.542 2.808 16.359C5.617 40.008 10.15 40 19.167 40h1.666c9.05 0 13.575 0 16.392-2.808C40.042 34.383 40 29.85 40 20.833v-1.666c0-9.017 0-13.542-2.808-16.359zM28.7 28.817a8.224 8.224 0 00-6.9-5.95v5.95h-.517c-9.116 0-14.316-6.25-14.533-16.667h4.567c.15 7.633 3.516 10.833 6.183 11.533V12.167h4.3v6.583c2.633-.283 5.4-3.283 6.333-6.583h4.3A12.7 12.7 0 0126.6 20.5a13.158 13.158 0 016.85 8.333l-4.75-.016z" fill="#C4C4C4"/></g><defs><clipPath><path fill="#fff" d="M0 0h40v40H0z"/></clipPath></defs></svg></a>
                 </div>
                 <p class="footer__copyright">© 2022 Московский экспортный центр. Все права защищены. 16+. info@moscow-export.com</p>
             </div>

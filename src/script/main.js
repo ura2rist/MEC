@@ -35,13 +35,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const headerInner = document.querySelector('.header__inner');
   const headerInnerTwo = document.querySelector('.header__inner__two');
   const headerBannerImg = document.querySelector('.header__banner-menu');
+  const menuButton = document.querySelector('.mob-menu');
+  const headerMob = document.querySelector('.header__wrapper');
 
-  headerInner.addEventListener('click', event => {
-    const heightBlock = event.currentTarget.querySelector('.header__inner-list');
-
-    event.currentTarget.classList.toggle('header__inner_active');
-
-    if (heightBlock.style.height === "0px") {
+  function autoHeight(heightBlock) {
+    if(heightBlock.style.height === "0px") {
       heightBlock.style.height = `${ heightBlock.scrollHeight }px`
     } else {
       heightBlock.style.height = `${ heightBlock.scrollHeight }px`;
@@ -54,9 +52,40 @@ window.addEventListener('DOMContentLoaded', () => {
         heightBlock.style.height = "auto"
       }
     });
+  }
 
+  menuButton.addEventListener('click', function(event) {
+    event.currentTarget.classList.toggle('mob-menu_active');
+    headerMob.classList.toggle('header__wrapper_active');
     document.querySelector('body').classList.toggle('lock');
-    document.querySelector('header').classList.toggle('header_active');
+  });
+
+  headerInner.addEventListener('click', event => {
+    const heightBlock = event.currentTarget.querySelector('.header__inner-list');
+    const prevButton = document.getElementById('header__prev-button');
+
+    event.currentTarget.classList.toggle('header__inner_active');
+
+    autoHeight(heightBlock);
+
+    if(document.documentElement.clientWidth > 1180) {
+      document.querySelector('body').classList.toggle('lock');
+      document.querySelector('header').classList.toggle('header_active');
+    }
+
+    prevButton.addEventListener('click', function(event) {
+      event.stopPropagation();
+
+      autoHeight(heightBlock);
+
+      if(document.querySelector('.header__inner_active')) {
+        document.querySelector('.header__inner_active').classList.remove('header__inner_active');
+      }
+
+      if(document.querySelector('.header__inner__two_active')) {
+        document.querySelector('.header__inner__two_active').classList.remove('header__inner__two_active');
+      }
+    });
   });
 
   headerInnerTwo.addEventListener('click', event => {
@@ -66,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
     event.currentTarget.classList.toggle('header__inner__two_active');
   })
 
-  requestForm.addEventListener('submit', e => {
+  requestForm.addEventListener('submit', event => {
     alert('Успешно');
   });
 
@@ -103,10 +132,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function addElementDOM(select = 0) {
-    let widthWindow = 1200;
     let result;
     
-    if(document.documentElement.clientWidth > widthWindow) {
+    if(document.documentElement.clientWidth > 1180) {
       result = createTable(select);
     } else {
       result = createList(select);
@@ -131,16 +159,16 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   
   function createList(select) {
-    let ul = document.createElement('ul');
-    let ulHeader = '';
+    let divWrapp = document.createElement('div');
+    let content = '';
+
+    for(let i = 0; i < dataExh[select].length; i++) {
+      content += `<ul class="exhibition__list"><li class="exhibition__element"><span>Выставка:</span><span>${dataExh[select][i].name}</span></li><li class="exhibition__element"><span>Место проведения:</span><span>${dataExh[select][i].address}</span></li><li class="exhibition__element"><span>Прием заявок:</span><span>${dataExh[select][i].request}</span></li><li class="exhibition__element"><span>Дата проведения:</span><span>${dataExh[select][i].date}</span></li><li class="exhibition__element"><span>Формат участия:</span><span>${dataExh[select][i].format}</span></li></ul>`;
+    }
     
-    dataExh[select].forEach(function(item) {
-      ulHeader += `<li>Выставка: ${item.name}</li><li>Место проведения: ${item.address}</li><li>Прием заявок: ${item.request}</li><li>Дата проведения: ${item.date}</li><li>Формат участия: ${item.format}</li>`
-    });
+    divWrapp.innerHTML = content;
     
-     ul.innerHTML = ulHeader;
-    
-    return ul;
+    return divWrapp;
   }
 
   select();
