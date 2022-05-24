@@ -31,12 +31,50 @@ window.addEventListener('DOMContentLoaded', () => {
   ];
   const exhContent = document.querySelector('.exhibition__content');
   const exhItem = document.querySelectorAll('.exhibition__item');
+  const requestForm = document.querySelector('.request__form');
+  const headerInner = document.querySelector('.header__inner');
+  const headerInnerTwo = document.querySelector('.header__inner__two');
+  const headerBannerImg = document.querySelector('.header__banner-menu');
+
+  headerInner.addEventListener('click', event => {
+    const heightBlock = event.currentTarget.querySelector('.header__inner-list');
+
+    event.currentTarget.classList.toggle('header__inner_active');
+
+    if (heightBlock.style.height === "0px") {
+      heightBlock.style.height = `${ heightBlock.scrollHeight }px`
+    } else {
+      heightBlock.style.height = `${ heightBlock.scrollHeight }px`;
+      window.getComputedStyle(heightBlock, null).getPropertyValue("height");
+      heightBlock.style.height = "0";
+    }
+
+    heightBlock.addEventListener("transitionend", () => {
+      if (heightBlock.style.height !== "0px") {
+        heightBlock.style.height = "auto"
+      }
+    });
+
+    document.querySelector('body').classList.toggle('lock');
+    document.querySelector('header').classList.toggle('header_active');
+  });
+
+  headerInnerTwo.addEventListener('click', event => {
+    event.stopPropagation();
+
+    headerBannerImg.classList.toggle('header__banner-menu_active');
+    event.currentTarget.classList.toggle('header__inner__two_active');
+  })
+
+  requestForm.addEventListener('submit', e => {
+    alert('Успешно');
+  });
 
   exhItem.forEach(item => {
     item.addEventListener('click', function(){
       addElementDOM(this.dataset.set)
     });
-  })
+  });
 
   function select() {
     const selectHeader = document.querySelectorAll('.select__header');
