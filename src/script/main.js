@@ -38,6 +38,26 @@ window.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.mob-menu');
   const headerMob = document.querySelector('.header__wrapper');
   const prevButton = document.getElementById('header__prev-button');
+  let swiperReviews = new Swiper(".slider__main", {
+    spaceBetween: 180,
+    centeredSlides: true,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".slider__main-next",
+      prevEl: ".slider__main-prev",
+    },
+    breakpoints: {
+      900: {
+        slidesPerView: 3,
+      }
+    }
+  });
 
   function autoHeight(heightBlock) {
     if(heightBlock.style.height === "0px") {
@@ -78,7 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const heightBlock = event.currentTarget.closest('.header__inner-list');
 
     event.stopPropagation();
-    console.log(2)
+
     autoHeight(heightBlock);
 
     if(document.querySelector('.header__inner_active')) {
@@ -98,7 +118,36 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 
   requestForm.addEventListener('submit', event => {
-    alert('Успешно');
+    event.preventDefault();
+
+    const formInput = {
+      company: event.currentTarget.company,
+      fio: event.currentTarget.fio,
+      email: event.currentTarget.email,
+      phone: event.currentTarget.phone,
+    }
+    const policy = event.currentTarget.policy;
+
+    if(event.currentTarget.querySelector('.request__error-check')) {
+      console.log(event.currentTarget.querySelector('.request__error-check'))
+      event.currentTarget.querySelector('.request__error-check').classList.remove('request__error-check');
+    }
+
+    if(event.currentTarget.querySelector('.request__error')) {
+      event.currentTarget.querySelectorAll('.request__error').forEach(item => {
+        item.classList.remove('request__error');
+      });
+    }
+
+    if(formInput.company.value.trim() && formInput.fio.value.trim() && formInput.email.value.trim() && formInput.phone.value.trim() && policy.checked) {
+      alert('Форма заполнена')
+    } else {
+      policy.checked || policy.nextElementSibling.querySelector('.request__error-span').classList.add('request__error-check');
+      
+      for(let key in formInput) {
+        formInput[key].value || formInput[key].closest('.request__form-input').classList.add('request__error');
+      }
+    }
   });
 
   exhItem.forEach(item => {
@@ -177,24 +226,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   addElementDOM();
 
-  let swiperReviews = new Swiper(".slider__main", {
-    spaceBetween: 180,
-    centeredSlides: true,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    slidesPerView: 1,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".slider__main-next",
-      prevEl: ".slider__main-prev",
-    },
-    breakpoints: {
-      900: {
-        slidesPerView: 3,
+  document.querySelectorAll('.footer__content-title').forEach(function(item) {
+    item.addEventListener('click', function(event) {
+      if(document.documentElement.clientWidth < 620) {
+        
       }
-    }
+    });
   })
 });

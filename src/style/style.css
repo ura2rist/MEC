@@ -856,6 +856,27 @@ ul {
     color: #ffffff;
     border: none;
     background-color: #C00D0D;
+    cursor: pointer;
+}
+
+.request__error::before {
+    content: '*';
+    color: #c00d0d;
+    display: flex;
+    height: 10px;
+    top: 45%;
+    right: 25px;
+    position: absolute;
+}
+
+.request__error-check::before {
+    content: '*';
+    color: #c00d0d;
+    display: flex;
+    height: 10px;
+    top: 40%;
+    left: -14px;
+    position: absolute;
 }
 
 .request__info,
@@ -1592,11 +1613,21 @@ ul {
     .footer__logo-link {
         font-size: 13px;
         line-height: 0px;
+        max-width: 126px;
     }
 
     .footer__logo-line__weight {
         font-size: 19px;
         line-height: 23px;
+    }
+
+    .footer__line {
+        margin-bottom: 15px;
+    }
+
+    .footer__content-links {
+        height: 0;
+        overflow: hidden;
     }
 
     .request__title {
@@ -1723,5 +1754,9 @@ ul {
         position: relative;
         left: -18px;
         width: 92%;
+    }
+
+    .footer__content-title {
+        cursor: pointer;
     }
 }
