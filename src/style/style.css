@@ -1576,6 +1576,152 @@ ul {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
+    .banner__wrapper {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-top: 125px;
+    }
 
+    .footer__img-emblem {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .footer__logo-link {
+        font-size: 13px;
+        line-height: 0px;
+    }
+
+    .footer__logo-line__weight {
+        font-size: 19px;
+        line-height: 23px;
+    }
+
+    .request__title {
+        font-size: 24px;
+    }
+
+    .request__description {
+        font-size: 12px;
+    }
+
+    .request__form-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .request__form-input {
+        width: 100%;
+    }
+
+    .request__form-input input {
+        font-size: 14px;
+    }
+
+    .select {
+        font-size: 14px;
+    }
+
+    .select__item {
+        font-size: 12px;
+    }
+
+    .wrapper {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .description__title {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .banner {
+        margin-bottom: 25px;
+    }
+
+    .banner__title {
+        font-size: 18px;
+    }
+
+    .slider__wrapper {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .header__line {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .header__mob-address, .header__mob-mail {
+        max-width: 205px;
+    }
+
+    .advantage__item {
+        width: 100%;
+    }
+
+    .requirements__title {
+        font-size: 18px;
+    }
+
+    .requirements__item {
+        width: 100%;
+        margin-right: 0;
+        padding-top: 0;
+        padding-left: 70px;
+        min-height: 68px;
+        line-height: 14px;
+        margin-bottom: 32px;
+    }
+
+    .requirements__item:nth-child(4) {
+        margin-bottom: 32px;
+    }
+
+    .requirements__item::before {
+        width: 68px;
+        height: 68px;
+        left: 0;
+    }
+
+    .requirements__item:nth-child(4):before {
+        top: 0;
+    }
+
+    .requirements__item:nth-child(2):before {
+        left: 0;
+        top: -10px;
+    }
+
+    .requirements__item:nth-child(5):before {
+        top: 0;
+        left: 0;
+    }
+
+    .exhibition__element {
+        font-size: 16px;
+    }
+
+    .request__policy-check {
+        padding-right: 0;
+    }
+
+    .courses__title {
+        font-size: 24px;
+    }
+
+    .footer__soc {
+        left: 20px;
+        bottom: 50px;
+    }
+
+    .header__mob-contacts {
+        position: relative;
+        left: -18px;
+        width: 92%;
+    }
 }
