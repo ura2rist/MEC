@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const headerBannerImg = document.querySelector('.header__banner-menu');
   const menuButton = document.querySelector('.mob-menu');
   const headerMob = document.querySelector('.header__wrapper');
+  const prevButton = document.getElementById('header__prev-button');
 
   function autoHeight(heightBlock) {
     if(heightBlock.style.height === "0px") {
@@ -62,7 +63,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   headerInner.addEventListener('click', event => {
     const heightBlock = event.currentTarget.querySelector('.header__inner-list');
-    const prevButton = document.getElementById('header__prev-button');
 
     event.currentTarget.classList.toggle('header__inner_active');
 
@@ -72,20 +72,22 @@ window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('body').classList.toggle('lock');
       document.querySelector('header').classList.toggle('header_active');
     }
+  });
 
-    prevButton.addEventListener('click', function(event) {
-      event.stopPropagation();
+  prevButton.addEventListener('click', function(event) {
+    const heightBlock = event.currentTarget.closest('.header__inner-list');
 
-      autoHeight(heightBlock);
+    event.stopPropagation();
+    console.log(2)
+    autoHeight(heightBlock);
 
-      if(document.querySelector('.header__inner_active')) {
-        document.querySelector('.header__inner_active').classList.remove('header__inner_active');
-      }
+    if(document.querySelector('.header__inner_active')) {
+      document.querySelector('.header__inner_active').classList.remove('header__inner_active');
+    }
 
-      if(document.querySelector('.header__inner__two_active')) {
-        document.querySelector('.header__inner__two_active').classList.remove('header__inner__two_active');
-      }
-    });
+    if(document.querySelector('.header__inner__two_active')) {
+      document.querySelector('.header__inner__two_active').classList.remove('header__inner__two_active');
+    }
   });
 
   headerInnerTwo.addEventListener('click', event => {
@@ -180,7 +182,7 @@ window.addEventListener('DOMContentLoaded', () => {
     centeredSlides: true,
     loop: true,
     loopFillGroupWithBlank: true,
-    slidesPerView: 3,
+    slidesPerView: 1,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -188,6 +190,11 @@ window.addEventListener('DOMContentLoaded', () => {
     navigation: {
       nextEl: ".slider__main-next",
       prevEl: ".slider__main-prev",
+    },
+    breakpoints: {
+      900: {
+        slidesPerView: 3,
+      }
     }
   })
 });
