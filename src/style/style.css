@@ -1249,12 +1249,12 @@ ul {
 
     .header__mob-contacts {
         display: block;
-        position: absolute;
-        padding-left: 30px;
-        padding-right: 30px;
+        position: relative;
         left: 0;
         width: 100%;
         max-width: 400px;
+        width: 100%;
+        max-width: none;
     }
 
     .header__mob-soc svg{
@@ -1336,6 +1336,7 @@ ul {
         position: relative;
         cursor: pointer;
         display: block;
+        margin-bottom: 10px;
     }
 
     .header__prev-button .header__arrow {
@@ -1443,6 +1444,23 @@ ul {
 }
 
 @media screen and (max-width: 900px) {
+    .main__wrapper {
+        overflow: hidden;
+    }
+
+    .header__line {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .banner {
+        margin-bottom: 55px;
+    }
+
+    .slider {
+        margin-bottom: 43px;
+    }
+
     .banner__wrapper {
         text-align: left;
         padding-left: 35px;
@@ -1462,6 +1480,7 @@ ul {
 
     .description__title {
         font-size: 18px;
+        line-height: 22px;
     }
 
     .slider__main .swiper-slide-active .slider__img {
@@ -1475,11 +1494,22 @@ ul {
     }
 
     .advantage__title {
+        margin-bottom: 29px;
         font-size: 18px;
     }
 
+    .advantage__item::before {
+        top: 5px;
+    }
+
     .advantage__item {
+        width: 50%;
+        line-height: 17px;
         font-size: 14px;
+    }
+
+    .requirements {
+        padding-top: 51px;
     }
 
     .requirements__title {
@@ -1523,6 +1553,7 @@ ul {
 
     .requirements__item {
         font-size: 14px;
+        line-height: 20px;
     }
 
     .request__policy-check {
@@ -1576,7 +1607,14 @@ ul {
         font-size: 14px;
     }
 
+    .courses__item-icon {
+        position: absolute;
+        top: 0;
+    }
+
     .courses__item-moduls {
+        position: relative;
+        padding-top: 45px;
         font-size: 14px;
     }
 
@@ -1601,6 +1639,11 @@ ul {
 
     .courses__item {
         max-width: 270px;
+        margin-bottom: 0;
+    }
+
+    .courses {
+        margin-bottom: 54px;
     }
 }
 
@@ -1767,8 +1810,6 @@ ul {
 
     .header__mob-contacts {
         position: relative;
-        left: -18px;
-        width: 92%;
     }
 
     .footer__content-title {
@@ -1778,6 +1819,7 @@ ul {
     }
 
     .courses__item {
+        margin-bottom: 38px;
         max-width: 100%;
     }
 
@@ -1859,6 +1901,8 @@ ul {
 
     .exhibition__element span:first-child{
         max-width: 146px;
+        display: flex;
+        align-items: center;
     }
 
     .exhibition__element span:last-child{
@@ -1892,11 +1936,37 @@ ul {
         right: -58px;
     }
 
-    .main {
-        overflow: hidden;
-    }
-
     .description__wrapper::before {
         content: none;
+    }
+
+    .request__info-mob {
+        width: 100%;
+    }
+
+    .slider__main {
+        height: 195px;
+    }
+
+    .slider__main .swiper-slide-active .slider__img {
+        min-height: 194px;
+        object-position: center;
+    }
+
+    .slider__main-prev {
+        right: 90px;
+    }
+
+    .slider__main-next {
+        right: 20px;
+    }
+
+    .slider__main .swiper-pagination {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .description {
+        margin-bottom: 25px;
     }
 }

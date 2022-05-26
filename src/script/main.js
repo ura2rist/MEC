@@ -202,7 +202,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let content = '';
 
     for(let i = 0; i < dataExh[select].length; i++) {
-      content += `<ul class="exhibition__list"><li class="exhibition__element"><span>Выставка:</span><span>${dataExh[select][i].name}</span></li><li class="exhibition__element"><span>Место проведения:</span><span>${dataExh[select][i].address}</span></li><li class="exhibition__element"><span>Прием заявок:</span><span>${dataExh[select][i].request}</span></li><li class="exhibition__element"><span>Дата проведения:</span><span>${dataExh[select][i].date}</span></li><li class="exhibition__element"><span>Формат участия:</span><span>${dataExh[select][i].format}</span></li></ul>`;
+      content += `<ul class="exhibition__list"><li class="exhibition__element"><span>Выставка</span><span>${dataExh[select][i].name}</span></li><li class="exhibition__element"><span>Место проведения</span><span>${dataExh[select][i].address}</span></li><li class="exhibition__element"><span>Прием заявок</span><span>${dataExh[select][i].request}</span></li><li class="exhibition__element"><span>Дата проведения</span><span>${dataExh[select][i].date}</span></li><li class="exhibition__element"><span>Формат участия</span><span>${dataExh[select][i].format}</span></li></ul>`;
     }
     
     divWrapp.innerHTML = content;
