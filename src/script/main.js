@@ -38,26 +38,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.mob-menu');
   const headerMob = document.querySelector('.header__wrapper');
   const prevButton = document.getElementById('header__prev-button');
-  let swiperReviews = new Swiper(".slider__main", {
-    spaceBetween: 180,
-    centeredSlides: true,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    slidesPerView: 1,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".slider__main-next",
-      prevEl: ".slider__main-prev",
-    },
-    breakpoints: {
-      900: {
-        slidesPerView: 3,
-      }
-    }
-  });
 
   function autoHeight(heightBlock) {
     if(heightBlock.style.height === "0px") {
@@ -170,13 +150,21 @@ window.addEventListener('DOMContentLoaded', () => {
     
     function selectToggle() {
       this.parentElement.classList.toggle('select_active');
+      const block = this.nextElementSibling;
+      
+      if(!block.style.height) {
+        block.style.height = block.scrollHeight + 'px';
+      } else {
+        block.style.height = '';
+      }
     }
     
     function selectChoose() {
-      let text = this.innerText;
-      let select = this.closest('.select');
-      let currentText = this.closest('.select').querySelector('.select__enter');
+      const text = this.innerText;
+      const select = this.closest('.select');
+      const currentText = this.closest('.select').querySelector('.select__enter');
 
+      this.closest('.select__body').style.height = '';
       currentText.innerText = text;
       select.classList.remove('select_active');
     }
@@ -227,9 +215,19 @@ window.addEventListener('DOMContentLoaded', () => {
   addElementDOM();
 
   document.querySelectorAll('.footer__content-title').forEach(function(item) {
-    item.addEventListener('click', function(event) {
+    item.addEventListener('click', e => {
       if(document.documentElement.clientWidth < 620) {
+        const block = e.currentTarget.nextElementSibling;
+
+        e.currentTarget.classList.toggle('footer__content-title_active');
         
+        if(!block.style.height) {
+          block.style.height = block.scrollHeight + 'px';
+          block.style.paddingBottom = '20px';
+        } else {
+          block.style.height = '';
+          block.style.paddingBottom = '';
+        }
       }
     });
   })

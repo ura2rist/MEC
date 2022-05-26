@@ -135,5 +135,6 @@ watch(path.src.svg, svgSprites);
 watch(path.src.js, scripts);
 watch(path.src.img, images);
 watch(path.src.fonts, fonts);
+watch(path.src.resources, resources);
 
 exports.default = series(clean, html, resources, svgSprites, images, fonts, scripts, styles, watchFile);
