@@ -1387,14 +1387,42 @@ ul {
         width: 48%;
     }
 
+    .request__info {
+        margin-bottom: 20px;
+        width: 100%;
+        order: 6;
+    }
+
+    .request__policy-check {
+        order: 8;
+        width: 48%;
+        padding-right: 0;
+    }
+
+    .checkbox-check::before {
+        top: 0;
+        transform: translateY(0);
+    }
+
+    .checkbox__custom:checked~.checkbox-check::after {
+        top: 6px;
+        transform: translateY(0);
+    }
+
+    .request__form-submit {
+        order: 7;
+        margin-right: auto;
+        width: 48%;
+    }
+
+    .request__error-check::before {
+        top: 0;
+    }
+
     .request__info-mob {
         display: block;
         margin-right: 50%;
         margin-bottom: 15px;
-    }
-
-    .request__info {
-        display: none;
     }
 
     .courses__list {
@@ -1557,7 +1585,6 @@ ul {
     }
 
     .request__policy-check {
-        width: 100%;
         font-size: 12px;
     }
 
@@ -1583,7 +1610,6 @@ ul {
 
     .request__form-input {
         font-size: 18px;
-        width: 50%;
     }
 
     .courses__item-img {
@@ -1796,6 +1822,7 @@ ul {
 
     .request__policy-check {
         padding-right: 0;
+        width: 100%;
     }
 
     .courses__title {
