@@ -70,8 +70,13 @@
         <main class="main">
             <section class="banner">
                 <div class="wrapper banner__wrapper">
-                    <p class="banner__title">Время экспортировать!</p>
-                    <p class="banner__description">МЭЦ на связи: открыта линия для поддержки экспортеров</p>
+                    <div class="banner__container">
+                        <img src="./images/banner.png" class="banner__img" alt="">
+                        <div class="banner__content">
+                            <p class="banner__title">Время экспортировать!</p>
+                            <p class="banner__description">МЭЦ на связи: открыта линия для поддержки экспортеров</p>
+                        </div>
+                    </div>
                 </div>
             </section>
             <div class="main__wrapper">
@@ -84,24 +89,24 @@
                     <div class="wrapper slider__wrapper">
                         <div class="swiper slider__main">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                <div class="swiper-slide swiper-zoom-target">
                                     <picture class="slider__picture">
                                         <source srcset="./images/img_slider1.webp" type="image/webp">
                                         <img src="./images/img_slider1.png"  class="slider__img" alt="Фото">
                                     </picture></div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide swiper-zoom-target">
                                     <picture class="slider__picture">
                                         <source srcset="./images/img_slider2.webp" type="image/webp">
                                         <img src="./images/img_slider2.png"  class="slider__img" alt="Фото">
                                     </picture>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide swiper-zoom-target">
                                     <picture class="slider__picture">
                                         <source srcset="./images/img_slider3.webp" type="image/webp">
                                         <img src="./images/img_slider3.png"  class="slider__img" alt="Фото">
                                     </picture>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide swiper-zoom-target">
                                     <picture class="slider__picture">
                                         <source srcset="./images/img_slider4.webp" type="image/webp">
                                         <img src="./images/img_slider4.png"  class="slider__img" alt="Фото">
@@ -159,6 +164,97 @@
                             </div>
                         </div>
                         <div class="exhibition__content">
+                            <ul class="exhibition__content-title">
+                                <li class="exhibition__header-title">Выставка</li>
+                                <li class="exhibition__header-title">Место проведения</li>
+                                <li class="exhibition__header-title">Прием заявок</li>
+                                <li class="exhibition__header-title">Дата проведения</li>
+                                <li class="exhibition__header-title">Формат участия</li>
+                            </ul>
+                            <ul class="exhibition__elements">
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Выставка 
+                                    </div>
+                                    <div class="exhibition__description">
+                                    Anuga Asia 2022
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Место проведения
+                                    </div>
+                                    <div class="exhibition__description">
+                                    Бангкок, Таиланд
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Прием заявок
+                                    </div>
+                                    <div class="exhibition__description">
+                                    24-28 мая 2022
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Дата проведения
+                                    </div>
+                                    <div class="exhibition__description">
+                                    16-18 сентября 2022 года
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Формат участия
+                                    </div>
+                                    <div class="exhibition__description">
+                                    стенд Made in Moscow
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="exhibition__elements">
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Выставка 
+                                    </div>
+                                    <div class="exhibition__description">
+                                    Anuga Asia 2022 2
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Место проведения
+                                    </div>
+                                    <div class="exhibition__description">
+                                    Бангкок, Таиланд 2
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Прием заявок
+                                    </div>
+                                    <div class="exhibition__description">
+                                    24-28 мая 2022 2
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Дата проведения
+                                    </div>
+                                    <div class="exhibition__description">
+                                    16-18 сентября 2022 года 2
+                                    </div>
+                                </li>
+                                <li class="exhibition__list">
+                                    <div class="exhibition__list-title">
+                                    Формат участия
+                                    </div>
+                                    <div class="exhibition__description">
+                                    стенд Made in Moscow 2
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -195,10 +291,12 @@
                         <h2 class="courses__title">Курсы для экспортеров</h2>
                         <ul class="courses__list">
                             <li class="courses__item">
-                                <picture class="courses__item-pict">
-                                    <source srcset="./images/course_1.webp" type="image/webp">
-                                    <img src="./images/course_1.png" class="courses__item-img" alt="">
-                                </picture>
+                                <div class="courses__img-wrapp">
+                                    <picture class="courses__item-pict">
+                                        <source srcset="./images/course_1.webp" type="image/webp">
+                                        <img src="./images/course_1.png" class="courses__item-img" alt="">
+                                    </picture>
+                                </div>
                                 <div class="courses__item-wrapp">
                                     <p class="courses__item-block">Блок 1</p>
                                     <h3 class="courses__item-title">На экспорт с нуля</h3>
@@ -231,10 +329,12 @@
                                 </div>
                             </li>
                             <li class="courses__item">
-                                <picture class="courses__item-pict">
-                                    <source srcset="./images/course_2.webp" type="image/webp">
-                                    <img src="./images/course_2.png" class="courses__item-img" alt="">
-                                </picture>
+                                <div class="courses__img-wrapp">
+                                    <picture class="courses__item-pict">
+                                        <source srcset="./images/course_2.webp" type="image/webp">
+                                        <img src="./images/course_2.png" class="courses__item-img" alt="">
+                                    </picture>
+                                </div>
                                 <div class="courses__item-wrapp">
                                     <p class="courses__item-block">Блок 2</p>
                                     <h3  class="courses__item-title">Английский для ВЭД</h3>

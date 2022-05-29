@@ -1,36 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const dataExh = [
-    [{
-      name: 'Anuga Asia 2022',
-      address: 'Бангкок, Таиланд',
-      request: '24-28 мая 2022',
-      date: '16-18 сентября 2022 года',
-      format: 'стенд Made in Moscow'
-    },
-    {
-      name: 'Anuga Asia 2022',
-      address: 'Бангкок, Таиланд',
-      request: '24-28 мая 2022',
-      date: '16-18 сентября 2022 года',
-      format: 'стенд Made in Moscow'
-    }],
-    [{
-      name: 'Anuga Asia 2022 2',
-      address: 'Бангкок, Таиланд 2',
-      request: '24-28 мая 2022 2',
-      date: '16-18 сентября 2022 года 2',
-      format: 'стенд Made in Moscow 2'
-    },
-    {
-      name: 'Anuga Asia 2022 2',
-      address: 'Бангкок, Таиланд 2',
-      request: '24-28 мая 2022 2',
-      date: '16-18 сентября 2022 года 2',
-      format: 'стенд Made in Moscow 2'
-    }]
-  ];
-  const exhContent = document.querySelector('.exhibition__content');
-  const exhItem = document.querySelectorAll('.exhibition__item');
   const requestForm = document.querySelector('.request__form');
   const headerInner = document.querySelector('.header__inner');
   const headerInnerTwo = document.querySelector('.header__inner__two');
@@ -59,10 +27,40 @@ window.addEventListener('DOMContentLoaded', () => {
     event.currentTarget.classList.toggle('mob-menu_active');
     headerMob.classList.toggle('header__wrapper_active');
     document.querySelector('body').classList.toggle('lock');
+
+    if(document.querySelector('.header__inner_active')) {
+      const heightBlock = document.querySelector('.header__inner-list');
+
+      autoHeight(heightBlock);
+      document.querySelector('.header__inner_active').classList.remove('header__inner_active');
+    }
+
+    if(document.querySelector('.header__inner__two_active')) {
+      document.querySelector('.header__inner__two_active').classList.remove('header__inner__two_active');
+    }
   });
 
   headerInner.addEventListener('click', event => {
     const heightBlock = event.currentTarget.querySelector('.header__inner-list');
+ 
+    document.addEventListener('click', event => {
+      if(document.querySelector('.header_active')) {
+        const withinBoundaries = event.composedPath().includes(document.querySelector('.header__wrapper'));
+  
+        if(!withinBoundaries) {
+          autoHeight(heightBlock);
+          document.querySelector('body').classList.toggle('lock');
+          document.querySelector('header').classList.toggle('header_active');
+          document.querySelector('.header__inner_active').classList.toggle('header__inner_active');
+
+          if(document.querySelector('.header__inner__two_active')) {
+            document.querySelector('.header__inner__two_active').classList.toggle('header__inner__two_active');
+            document.querySelector('.header__banner-menu_active').classList.toggle('header__banner-menu_active');
+          }
+        }
+      }
+    });
+
 
     event.currentTarget.classList.toggle('header__inner_active');
 
@@ -130,12 +128,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  exhItem.forEach(item => {
-    item.addEventListener('click', function(){
-      addElementDOM(this.dataset.set)
-    });
-  });
-
   function select() {
     const selectHeader = document.querySelectorAll('.select__header');
     const selectItem = document.querySelectorAll('.select__item');
@@ -170,49 +162,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function addElementDOM(select = 0) {
-    let result;
-    
-    if(document.documentElement.clientWidth > 1180) {
-      result = createTable(select);
-    } else {
-      result = createList(select);
-    }
-
-    exhContent.innerHTML = '';
-    exhContent.append(result);
-  }
-  
-  function createTable(select) {
-    let table = document.createElement('table');
-    let tableHeader = '<tr class="exhibition__table__header"><td>Выставка</td><td>Место проведения</td><td>Прием заявок</td><td>Дата проведения</td><td>Формат участия</td></tr>';
-    
-    table.classList.add('exhibition__table');
-    dataExh[select].forEach(function(item) {
-      tableHeader += `<tr><td>${item.name}</td><td>${item.address}</td><td>${item.request}</td><td>${item.date}</td><td>${item.format}</td></tr>`
-    });
-    
-    table.innerHTML = tableHeader;
-    
-    return table;
-  }
-  
-  function createList(select) {
-    let divWrapp = document.createElement('div');
-    let content = '';
-
-    for(let i = 0; i < dataExh[select].length; i++) {
-      content += `<ul class="exhibition__list"><li class="exhibition__element"><span>Выставка</span><span>${dataExh[select][i].name}</span></li><li class="exhibition__element"><span>Место проведения</span><span>${dataExh[select][i].address}</span></li><li class="exhibition__element"><span>Прием заявок</span><span>${dataExh[select][i].request}</span></li><li class="exhibition__element"><span>Дата проведения</span><span>${dataExh[select][i].date}</span></li><li class="exhibition__element"><span>Формат участия</span><span>${dataExh[select][i].format}</span></li></ul>`;
-    }
-    
-    divWrapp.innerHTML = content;
-    
-    return divWrapp;
-  }
-
   select();
-
-  addElementDOM();
 
   document.querySelectorAll('.footer__content-title').forEach(function(item) {
     item.addEventListener('click', e => {
