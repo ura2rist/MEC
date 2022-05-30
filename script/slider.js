@@ -13,7 +13,7 @@ let swiperReviews = new Swiper(".slider__main", {
         prevEl: ".slider__main-prev",
     },
     breakpoints: {
-        900: {
+        1024: {
         slidesPerView: 3,
         }
     }

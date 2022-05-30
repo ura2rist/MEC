@@ -26,7 +26,8 @@ window.addEventListener('DOMContentLoaded', () => {
   menuButton.addEventListener('click', function(event) {
     event.currentTarget.classList.toggle('mob-menu_active');
     headerMob.classList.toggle('header__wrapper_active');
-    document.querySelector('body').classList.toggle('lock');
+    document.querySelector('body').classList.toggle('lock-mob');
+    document.querySelector('header').classList.toggle('header_active');
 
     if(document.querySelector('.header__inner_active')) {
       const heightBlock = document.querySelector('.header__inner-list');
@@ -37,6 +38,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if(document.querySelector('.header__inner__two_active')) {
       document.querySelector('.header__inner__two_active').classList.remove('header__inner__two_active');
+    }
+
+    if(document.querySelector('.lock')) {
+      document.querySelector('.lock').classList.remove('lock');
     }
   });
 
@@ -49,9 +54,9 @@ window.addEventListener('DOMContentLoaded', () => {
   
         if(!withinBoundaries) {
           autoHeight(heightBlock);
-          document.querySelector('body').classList.toggle('lock');
+
           document.querySelector('header').classList.toggle('header_active');
-          document.querySelector('.header__inner_active').classList.toggle('header__inner_active');
+          document.querySelector('.header__inner').classList.toggle('header__inner_active');
 
           if(document.querySelector('.header__inner__two_active')) {
             document.querySelector('.header__inner__two_active').classList.toggle('header__inner__two_active');
@@ -78,6 +83,10 @@ window.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
 
     autoHeight(heightBlock);
+
+    if(document.querySelector('.lock')) {
+      document.querySelector('.lock').classList.remove('lock');
+    }
 
     if(document.querySelector('.header__inner_active')) {
       document.querySelector('.header__inner_active').classList.remove('header__inner_active');
